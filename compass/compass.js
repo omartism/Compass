@@ -1,11 +1,15 @@
 var x;
 var y;
 var text;
+var zone;
+var street;
 
 API.onUpdate.connect(function (sender) {
 
     x = API.getGameplayCamDir().X;
     y = API.getGameplayCamDir().Y;
+    zone = API.getZoneNameLabel(API.getEntityPosition(API.getLocalPlayer()));
+    street = API.getStreetName(API.getEntityPosition(API.getLocalPlayer()));
 
     if (0.3 < x && 0.3 < y) {
 
@@ -48,7 +52,10 @@ API.onUpdate.connect(function (sender) {
         text="N";
     }
     
-    API.drawText(text, 350, 1000, 1, 255, 255, 255, 255, 2, 1, false, true, 0);
+    API.drawText(text, 350, 1000, 1, 255, 255, 255, 200, 2, 1, false, true, 0);
+    API.drawText("|", 385, 1000, 1, 255, 255, 255, 200, 4, 1, false, true, 0);
+    API.drawText(zone, 425, 1003, 0.5, 255, 255, 255, 200, 4, 1, false, true, 0);
+    API.drawText(street, 425, 1030, 0.4, 255, 255, 255, 200, 4, 1, false, true, 0);
 });
 
 
