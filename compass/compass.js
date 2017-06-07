@@ -2,6 +2,7 @@ var text;
 var zone;
 var street;
 
+<<<<<<< HEAD
 var mapMarginLeft = API.getScreenResolution().Width / 64;
 var mapMarginBottom = API.getScreenResolution().Height / 60;
 var mapWidth = API.getScreenResolution().Width / 7.11;
@@ -10,6 +11,9 @@ var resX = mapMarginLeft  + mapWidth + mapMarginLeft;
 var resY = API.getScreenResolution().Height - mapHeight - mapMarginBottom;
 
 var updateTimeoutInMilliseconds = 500;
+=======
+var updateTimeoutInMilliseconds = 1000;
+>>>>>>> origin/master
 var lastUpdateTickCount = 0;
 
 function updateDirectionText() {
@@ -46,10 +50,17 @@ function updateValues() {
     
     zone = API.getZoneNameLabel(playerPosition);
     street = API.getStreetName(playerPosition);
+<<<<<<< HEAD
 
     updateDirectionText();
 }
 
+=======
+
+    updateDirectionText();
+}
+
+>>>>>>> origin/master
 API.onUpdate.connect(function (sender) {
     var currentTimeInMilliseconds = new Date().getTime();
     if (currentTimeInMilliseconds - lastUpdateTickCount > updateTimeoutInMilliseconds)
@@ -57,11 +68,19 @@ API.onUpdate.connect(function (sender) {
         lastUpdateTickCount = currentTimeInMilliseconds;
         updateValues();
     }
+<<<<<<< HEAD
     
     API.drawText(text, resX+10, resY+127, 1.05, 255, 255, 255, 200, 2, 1, false, true, 0);
     API.drawText("|", resX+60, resY+130, 1, 255, 255, 255, 200, 4, 1, false, true, 0);
     API.drawText(zone, resX+105, resY+133, 0.5, 255, 255, 255, 200, 4, 1, false, true, 0);
     API.drawText(street, resX+105, resY+160, 0.4, 255, 255, 255, 200, 4, 1, false, true, 0);
+=======
+
+    API.drawText(text, 350, 1000, 1, 255, 255, 255, 200, 2, 1, false, true, 0);
+    API.drawText("|", 385, 1000, 1, 255, 255, 255, 200, 4, 1, false, true, 0);
+    API.drawText(zone, 425, 1003, 0.5, 255, 255, 255, 200, 4, 1, false, true, 0);
+    API.drawText(street, 425, 1030, 0.4, 255, 255, 255, 200, 4, 1, false, true, 0);
+>>>>>>> origin/master
 });
 
 
