@@ -59,7 +59,7 @@ API.onUpdate.connect(function (sender) {
     }
     
     API.drawText(text, resX+10, resY+127, 1.05, 255, 255, 255, 200, 2, 1, false, true, 0);
-    API.drawText("|", resX+60, resY+130, 1, 255, 255, 255, 200, 4, 1, false, true, 0);
+    API.drawText("|", resX+45, resY+130, 1, 255, 255, 255, 200, 4, 1, false, true, 0);
     API.drawText(zone, resX+105, resY+133, 0.5, 255, 255, 255, 200, 4, 1, false, true, 0);
     API.drawText(street, resX+105, resY+160, 0.4, 255, 255, 255, 200, 4, 1, false, true, 0);
 });
