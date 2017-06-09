@@ -2,12 +2,12 @@ var text;
 var zone;
 var street;
 
-var mapMarginLeft = API.getScreenResolution().Width / 64;
-var mapMarginBottom = API.getScreenResolution().Height / 60;
-var mapWidth = API.getScreenResolution().Width / 7.11;
-var mapHeight = API.getScreenResolution().Height / 5.71;
+var mapMarginLeft = API.GetScreenResolutionMaintainRatio().Width / 64;
+var mapMarginBottom = API.GetScreenResolutionMaintainRatio().Height / 60;
+var mapWidth = API.GetScreenResolutionMaintainRatio().Width / 7.11;
+var mapHeight = API.GetScreenResolutionMaintainRatio().Height / 5.71;
 var resX = mapMarginLeft  + mapWidth + mapMarginLeft;
-var resY = API.getScreenResolution().Height - mapHeight - mapMarginBottom;
+var resY = API.GetScreenResolutionMaintainRatio().Height - mapHeight - mapMarginBottom;
 
 var updateTimeoutInMilliseconds = 500;
 var lastUpdateTickCount = 0;
@@ -63,5 +63,3 @@ API.onUpdate.connect(function (sender) {
     API.drawText(zone, resX+105, resY+133, 0.5, 255, 255, 255, 200, 4, 1, false, true, 0);
     API.drawText(street, resX+105, resY+160, 0.4, 255, 255, 255, 200, 4, 1, false, true, 0);
 });
-
-
