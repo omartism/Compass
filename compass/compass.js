@@ -2,12 +2,12 @@ var text;
 var zone;
 var street;
 
-var mapMarginLeft = API.GetScreenResolutionMaintainRatio().Width / 64;
-var mapMarginBottom = API.GetScreenResolutionMaintainRatio().Height / 60;
-var mapWidth = API.GetScreenResolutionMaintainRatio().Width / 7.11;
-var mapHeight = API.GetScreenResolutionMaintainRatio().Height / 5.71;
+var mapMarginLeft = API.getScreenResolutionMaintainRatio().Width / 64;
+var mapMarginBottom = API.getScreenResolutionMaintainRatio().Height / 60;
+var mapWidth = API.getScreenResolutionMaintainRatio().Width / 7.11;
+var mapHeight = API.getScreenResolutionMaintainRatio().Height / 5.71;
 var resX = mapMarginLeft  + mapWidth + mapMarginLeft;
-var resY = API.GetScreenResolutionMaintainRatio().Height - mapHeight - mapMarginBottom;
+var resY = API.getScreenResolutionMaintainRatio().Height - mapHeight - mapMarginBottom;
 
 var updateTimeoutInMilliseconds = 500;
 var lastUpdateTickCount = 0;
@@ -50,7 +50,7 @@ function updateValues() {
     updateDirectionText();
 }
 
-API.onUpdate.connect(function (sender) {
+API.onUpdate.connect(function () {
     var currentTimeInMilliseconds = new Date().getTime();
     if (currentTimeInMilliseconds - lastUpdateTickCount > updateTimeoutInMilliseconds)
     {
